@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Agervang Vagtplan</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/offcanvas/">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Bootstrap core CSS -->
+<link href="assets/dist/css/bootstrap.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <nav class="navbar fixed-top navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand mr-auto mr-lg-0" href="#">Agervang Vagtplan</a>
+  <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Overblik <span class="sr-only">(current)</span></a>
+      </li>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Studerende
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Person1</a>
+          <a class="dropdown-item" href="#">Person2</a>
+          <a class="dropdown-item" href="#">Person3</a>
+        </div>
+      </li>
+    </ul>
+  </div> 
+  <!--
+      <li class="nav-item">
+        <a class="nav-link" href="#">Notifications</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Switch account</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Settings</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+        -->
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<!--
+<div class="nav-scroller bg-white shadow-sm">
+  <nav class="nav nav-underline">
+    <a class="nav-link active" href="#">Overblik</a>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Sarah</a>
+          <a class="dropdown-item" href="#">Joachim</a>
+          <a class="dropdown-item" href="#">Person3</a>
+        </div>
+      </li>
+  </nav>
+</div>
+-->
+
+
+
+
+<main role="main" class="container">
+  <div class="calendar">
+  <!-- Calendar May -->
+
+      <div class="month" id="month-5">
+      <!-- Next Prev Month -->
+      <ul>
+        <li class="prev">&#10094;</li>
+        <li class="next">&#10095;</li>
+        <li>May<br></li>
+      </ul>
+      <!-- Days in Month - Calendar -->
+      </div>  
+        <table class="table table-hover table-sm" id="myTable">
+          <thead class="thead-dark">
+            <tr>
+            <th style="text-align:center" scope="col">#</th>
+            <th style="text-align:center" scope="col">M</th>
+            <th style="text-align:center" scope="col">T</th>
+            <th style="text-align:center" scope="col">O</th>
+            <th style="text-align:center" scope="col">T</th>
+            <th style="text-align:center" scope="col">F</th>
+            <th style="text-align:center" scope="col">L</th>
+            <th style="text-align:center" scope="col">S</th>
+          </tr>
+        </thead>
+          <tbody>
+            <tr >
+              <th class="table-rowindex" style="text-align:center" style="float:none!important;display:inline;"  scope="row">1</th>
+              <!-- <td <button type="button" id="Fri" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">01</button></td> -->
+              <td align="center"> <input type="button" id="Dato: 01-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="01"></input></td>
+              <td align="center"> <input type="button" id="Dato: 02-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="02"></input></td>
+              <td align="center"> <input type="button" id="Dato: 03-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="03"></input></td>
+              <td align="center"> <input type="button" id="Dato: 04-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="04"></input></td>
+              <td align="center"> <input type="button" id="Dato: 05-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="05"></input></td>
+              <td align="center"> <input type="button" id="Dato: 06-05-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="06"></input></td>
+              <td align="center"> <input type="button" id="Dato: 07-05-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="07"></input></td>
+              </tr>
+            <tr>
+              <th class="table-rowindex" style="text-align:center" style="float:none!important;display:inline;"  scope="row">2</th>
+              <td align="center"> <input type="button" id="Dato: 08-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="08"></input></td>
+              <td align="center"> <input type="button" id="Dato: 09-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="09"></input></td>
+              <td align="center"> <input type="button" id="Dato: 10-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="10"></input></td>
+              <td align="center"> <input type="button" id="Dato: 11-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="11"></input></td>
+              <td align="center"> <input type="button" id="Dato: 12-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="12"></input></td>
+              <td align="center"> <input type="button" id="Dato: 13-05-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="13"></input></td>
+              <td align="center"> <input type="button" id="Dato: 14-05-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="14"></input></td>
+            </tr>
+            <tr>
+              <th class="table-rowindex" style="text-align:center" style="float:none!important;display:inline;"  scope="row">3</th>
+              <td align="center"> <input type="button" id="Dato: 15-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="15"></input></td>
+              <td align="center"> <input type="button" id="Dato: 16-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="16"></input></td>
+              <td align="center"> <input type="button" id="Dato: 17-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="17"></input></td>
+              <td align="center"> <input type="button" id="Dato: 18-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="18"></input></td>
+              <td align="center"> <input type="button" id="Dato: 19-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="19"></input></td>
+              <td align="center"> <input type="button" id="Dato: 20-05-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="20"></input></td>
+              <td align="center"> <input type="button" id="Dato: 21-05-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="21"></input></td>
+            </tr>
+            <tr>
+              <th class="table-rowindex" style="text-align:center" style="float:none!important;display:inline;"  scope="row">4</th>
+              <td align="center"> <input type="button" id="Dato: 22-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="22"></input></td>
+              <td align="center"> <input type="button" id="Dato: 23-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="23"></input></td>
+              <td align="center"> <input type="button" id="Dato: 24-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="24"></input></td>
+              <td align="center"> <input type="button" id="Dato: 25-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="25"></input></td>
+              <td align="center"> <input type="button" id="Dato: 26-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="26"></input></td>
+              <td align="center"> <input type="button" id="Dato: 27-05-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="27"></input></td>
+              <td align="center"> <input type="button" id="Dato: 28-05-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="28"></input></td>
+            </tr>
+            <tr>
+              <th class="table-rowindex" style="text-align:center" style="float:none!important;display:inline;"  scope="row">5</th>
+              <td align="center"> <input type="button" id="Dato: 29-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="29"></input></td>
+              <td align="center"> <input type="button" id="Dato: 30-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="30"></input></td>
+              <td align="center"> <input type="button" id="Dato: 31-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="31"></input></td>
+              <td align="center"> <input type="button" id="Dato: 01-06-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="01"></input></td>
+              <td align="center"> <input type="button" id="Dato: 02-06-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="02"></input></td>
+              <td align="center"> <input type="button" id="Dato: 03-06-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="03"></input></td>
+              <td align="center"> <input type="button" id="Dato: 04-06-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="#exampleModal" style="float:none!important;display:inline;" value="04"></input></td>
+            </tr>
+          </tbody>
+          </table>
+          </div>
+      </div>
+
+
+<!-- myModal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content" align="center">
+    <p>Vagten er fri.</p>
+    <p>Hvem skal tage den?</p>
+    <div class="dropdown">
+      <button class="btn btn-success btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="Vælg Person">
+      Vælg Person</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Sarah</a>
+        <a class="dropdown-item" href="#">Joachim</a>
+        <a class="dropdown-item" href="#">Ellen</a>
+      </div>
+      <div class="action-buttons" style="float:none!important;display:inline;"> 
+          <!-- <button type="button" class="btn btn-danger btn-sm">Afgiv vagt</button> -->
+          <button type="button" align="right" class="btn btn-success btn-sm" id="TagVagt" style="float:none!important;display:inline;">Tag vagt</button>
+          </div>
+      </div>
+  </div>
+
+
+
+
+</div>
+
+
+
+<!-- Ledige Vagter Liste -->
+  <div class="my-3 p-3 bg-white rounded shadow-sm">
+    <h6 class="border-bottom border-gray pb-2 mb-0">Mine kommende vagter</h6>
+    <div class="media text-muted pt-3">
+      <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark">Full Name</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button type="button" class="btn btn-success btn-sm list" id='TagVagt-list'>Tag</button>
+          </div>
+        </div>
+        <span class="d-block">Dato</span>
+      </div>
+    </div>
+    <div class="media text-muted pt-3">
+      <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark">Full Name</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button type="button" class="btn btn-success btn-sm list">Tag</button>
+          </div>
+        </div>
+        <span class="d-block">Dato</span>
+      </div>
+    </div>
+    <div class="media text-muted pt-3">
+      <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark">Full Name</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button type="button" class="btn btn-success btn-sm list">Tag</button>
+          </div>
+        </div>
+        <span class="d-block">Dato</span>
+      </div>
+    </div>
+    <small class="d-block text-right mt-3">
+      <a href="#">Vis flere</a>
+    </small>
+  </div>
+
+  <!-- Mine Kommende Vagter Liste -->
+  <div class="my-3 p-3 bg-white rounded shadow-sm">
+    <h6 class="border-bottom border-gray pb-2 mb-0">Mine kommende vagter</h6>
+    <div class="media text-muted pt-3">
+      <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark">Full Name</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button type="button" class="btn btn-warning btn-sm">Afsæt</button>
+          <button type="button" class="btn btn-danger btn-sm">Afvis</button>
+          </div>
+        </div>
+        <span class="d-block">Dato</span>
+      </div>
+    </div>
+    <div class="media text-muted pt-3">
+      <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark">Full Name</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button type="button" class="btn btn-warning btn-sm">Afsæt</button>
+          <button type="button" class="btn btn-danger btn-sm">Afgiv</button>
+          </div>
+        </div>
+        <span class="d-block">Dato</span>
+      </div>
+    </div>
+    <div class="media text-muted pt-3">
+      <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark">Full Name</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button type="button" class="btn btn-warning btn-sm">Afsæt</button>
+          <button type="button" class="btn btn-danger btn-sm">Afgiv</button>
+          </div>
+        </div>
+        <span class="d-block">Dato</span>
+      </div>
+    </div>
+    <small class="d-block text-right mt-3">
+      <a href="#">Vis flere</a>
+    </small>
+  </div>
+
+
+
+
+
+</main>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="assets/dist/js/bootstrap.bundle.js"></script><script src="assets/dist/js/bootstrap.bundle.js"></script>
+        <script src="offcanvas.js"></script></body>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</html>
