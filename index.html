@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Agervang Vagtplan</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/offcanvas/">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Bootstrap core CSS -->
+<link href="assets/dist/css/bootstrap.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <nav class="navbar fixed-top navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand mr-auto mr-lg-0" href="#">Agervang Vagtplan</a>
+  <button class="btn btn-outline-light sm" id="connectDatabase" style="float:none!important;display:inline;font-size:10px" onclick="authenticate().then(loadClient).then(currentYearMonth()).then(getData(YearMonthRange[currentYearMonth]))">Forbind</button>
+  <button style="display:none" onclick="execute()">execute</button>
+
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<!--
+<div class="nav-scroller bg-white shadow-sm">
+  <nav class="nav nav-underline">
+    <a class="nav-link active" href="#">Overblik</a>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Sarah</a>
+          <a class="dropdown-item" href="#">Joachim</a>
+          <a class="dropdown-item" href="#">Person3</a>
+        </div>
+      </li>
+  </nav>
+</div>
+-->
+<body>
+
+
+<main role="main" class="container">
+  <div class="calendar">
+  <!-- Calendar May -->
+
+      <div class="month" id="2020-05">
+      <!-- Next Prev Month -->
+      <ul>
+        <li id="prevMonth" class="prev">&#10094;</li>
+        <li id="nextMonth" class="next">&#10095;</li>
+        <li id="calendarTitel">2020-05<br></li>
+      </ul>
+      <!-- Days in Month - Calendar -->
+      </div>  
+        <table class="table table-hover table-sm" id="myTable">
+          <thead class="thead-dark">
+            <tr>
+            <th style="text-align:center" scope="col">#</th>
+            <th style="text-align:center" scope="col">M</th>
+            <th style="text-align:center" scope="col">T</th>
+            <th style="text-align:center" scope="col">O</th>
+            <th style="text-align:center" scope="col">T</th>
+            <th style="text-align:center" scope="col">F</th>
+            <th style="text-align:center" scope="col">L</th>
+            <th style="text-align:center" scope="col">S</th>
+          </tr>
+        </thead>
+          <tbody>
+            <tr >
+              <th class="table-rowindex" style="text-align:center" style="float:none!important;display:inline;"  scope="row">w</th>
+              <!-- <td <button type="button" id="Fri" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">01</button></td> -->
+              <td align="center"> <input type="button" person="ingen" id="Dato: 01-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="01"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 02-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="02"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 03-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="03"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 04-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="04"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 05-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="05"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 06-05-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="06"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 07-05-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="07"></input></td>
+              </tr>
+            <tr>
+              <th class="table-rowindex" style="text-align:center" style="float:none!important;display:inline;"  scope="row">w</th>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 08-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="08"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 09-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="09"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 10-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="10"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 11-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="11"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 12-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="12"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 13-05-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="13"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 14-05-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="14"></input></td>
+            </tr>
+            <tr>
+              <th class="table-rowindex" style="text-align:center" style="float:none!important;display:inline;"  scope="row">w</th>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 15-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="15"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 16-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="16"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 17-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="17"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 18-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="18"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 19-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="19"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 20-05-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="20"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 21-05-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="21"></input></td>
+            </tr>
+            <tr>
+              <th class="table-rowindex" style="text-align:center" style="float:none!important;display:inline;"  scope="row">w</th>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 22-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="22"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 23-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="23"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 24-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="24"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 25-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="25"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 26-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="26"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 27-05-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="27"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 28-05-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="28"></input></td>
+            </tr>
+            <tr>
+              <th class="table-rowindex" style="text-align:center" style="float:none!important;display:inline;"  scope="row">w</th>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 29-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="29"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 30-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="30"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 31-05-2020" class="btn btn-primary sm-fri" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="31"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 01-06-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="01"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 02-06-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="02"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 03-06-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="03"></input></td>
+              <td align="center"> <input type="button" person="ingen" id="Dato: 04-06-2020" class="btn btn-primary sm-nan" toggle="modal" data-target="0" style="float:none!important;display:inline;" value="04"></input></td>
+            </tr>
+          </tbody>
+          </table>
+          </div>
+      </div>
+
+
+<!-- init Modal -->
+<div id="initModal" class="modal">
+  <!-- Modal content -->
+  <div id="initModalContent" class="modal-content" align="center">
+    <p>Velkommen!</p>
+    <p>Venligst opret forbindelse til databasen.</p>
+    <button class="btn btn-info sm" id="connectDatabase" style="float:none!important;display:inline;font-size:12px;width:40%;height:30px" onclick="authenticate().then(currentYearMonth).then(loadClient()).then(wait(5*1000).then(setPause()))">Forbind</button>
+    <button class="btn btn-dark sm" id="connectClose" style="float:none!important;display:inline;font-size:12px;width:20%;margin-left:5px;height:30px" onclick="getData(YearMonthRange[currentYearMonth]).then(getTop10LedigeData()).then(getTop10KommendeData()).then(initModalNoShow()).then(waiting(2000)).then(hideLists())">Luk</button>
+  </div>
+
+<!--.then(wait(5*1000).then(setPause(getData(YearMonthRange[currentYearMonth]))))-->
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- MODAL - FRI -->
+<!-- myModal -->
+<div id="modal_fri" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content" align="center">
+    <p>Vagten er fri.</p>
+    <p>Hvem skal tage den?</p>
+    <div class="dropdown">
+      <button class="btn btn-success btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="Vælg Person">
+      Vælg Person</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a id="Sarah-tag" class="dropdown-item" href="#">Sarah</a>
+        <a id="Joachim-tag" class="dropdown-item" href="#">Joachim</a>
+        <a id="Ellen-tag" class="dropdown-item" href="#">Ellen</a>
+      </div>
+      <div class="action-buttons" style="float:none!important;display:inline;"> 
+          <!-- <button type="button" class="btn btn-danger btn-sm">Afgiv vagt</button> -->
+          <button type="button" align="right" class="btn btn-success btn-sm" id="TagVagt" style="float:none!important;display:inline;">Tag vagt</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- MODAL - TAG -->
+<div id="modal_tag" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content" align="center">
+    <p>Vagten er taget.</p>
+    <div class="container" align="center" id="Dato_tag">Dato: Ingen</div> 
+    <div class="container" align="center" id="Vagtager_tag">Vagttager: Ingen</div> 
+    <div class="container" align="center" style="margin-top:15px;">
+      <button type="button" align="center" class="btn btn-warning btn-sm" id="AfgivVagt" style="float:none!important;display:inline;margin-top:5px;">Afgiv</button>
+      </div> 
+  </div>
+</div>
+
+<!-- MODAL - AFG -->
+<div id="modal_afg" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content" align="center">
+    <p id="Text_afg">Vagten ønskes byttet.</p>
+    <div class="container" align="center" id="Dato_afg">Dato: Ingen</div> 
+    <div class="container" align="center" id="Vagtager_afg">Vagttager: Ingen</div> 
+     <div class="dropdown">
+      <button class="btn btn-success btn-sm dropdown-toggle" type="button" id="dropdownMenuButton-afg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="Vælg Person">
+      Vælg Person</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a id="Sarah-afg" class="dropdown-item" href="#">Sarah</a>
+        <a id="Joachim-afg" class="dropdown-item" href="#">Joachim</a>
+        <a id="Ellen-afg" class="dropdown-item" href="#">Ellen</a>
+      </div>
+      <div class="action-buttons" style="float:none!important;display:inline;"> 
+          <!-- <button type="button" class="btn btn-danger btn-sm">Afgiv vagt</button> -->
+          <button type="button" align="right" class="btn btn-success btn-sm" id="TagVagt-afg" style="float:none!important;display:inline;">Tag vagt</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+<!-- Ledige Vagter Liste -->
+  <div class="my-3 p-3 bg-white rounded shadow-sm" id="List_LedigeVagter">
+    <h6 class="border-bottom border-gray pb-2 mb-0">Kommende ledige vagter</h6>
+    <!-- TAGVAGT LIST ENTRY 1 -->
+    <div class="media text-muted pt-3" id="TagVagt-list_entry_1">
+        <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="TagVagt-list_Name1" value="Full Name">Navn</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-success btn-sm list" id='TagVagt-list1'>Tag</button>
+          </div>
+        </div>
+        <span class="d-block" id="TagVagt-list_Dato1" value="Dato">Dato</span>
+      </div>
+    </div>
+    
+    <!-- TAGVAGT LIST ENTRY 2 -->
+    <div class="media text-muted pt-3" id="TagVagt-list_entry_2">
+       <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="TagVagt-list_Name2" value="Full Name">Navn</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-success btn-sm list" id='TagVagt-list2'>Tag</button>
+          </div>
+        </div>
+        <span class="d-block" id="TagVagt-list_Dato2" value="Dato">Dato</span>
+      </div>
+    </div>
+
+    <!-- TAGVAGT LIST ENTRY 3 -->
+    <div class="media text-muted pt-3" id="TagVagt-list_entry_3">
+        <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="TagVagt-list_Name3" value="Full Name">Navn</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-success btn-sm list" id='TagVagt-list3'>Tag</button>
+          </div>
+        </div>
+        <span class="d-block" id="TagVagt-list_Dato3" value="Dato">Dato</span>
+      </div>
+    </div>
+
+    <!-- TAGVAGT LIST ENTRY 4 -->
+    <div class="media text-muted pt-3" id="TagVagt-list_entry_4">
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray" id= "placeholder_4">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="TagVagt-list_Name4" value="Full Name">Navn</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-success btn-sm list" id='TagVagt-list4'>Tag</button>
+          </div>
+        </div>
+        <span class="d-block" id="TagVagt-list_Dato4" value="Dato">Dato</span>
+      </div>
+    </div>
+
+    <!-- TAGVAGT LIST ENTRY 5 -->
+    <div class="media text-muted pt-3" id="TagVagt-list_entry_5">
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="TagVagt-list_Name5" value="Full Name">Navn</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-success btn-sm list" id='TagVagt-list5'>Tag</button>
+          </div>
+        </div>
+        <span class="d-block" id="TagVagt-list_Dato5" value="Dato">Dato</span>
+      </div>
+    </div>
+
+    <!-- TAGVAGT LIST ENTRY 6 -->
+    <div class="media text-muted pt-3" id="TagVagt-list_entry_6">
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="TagVagt-list_Name6" value="Full Name">Navn</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-success btn-sm list" id='TagVagt-list6'>Tag</button>
+          </div>
+        </div>
+        <span class="d-block" id="TagVagt-list_Dato6" value="Dato">Dato</span>
+      </div>
+    </div>
+
+    <!-- TAGVAGT LIST ENTRY 7 -->
+    <div class="media text-muted pt-3" id="TagVagt-list_entry_7">
+       <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="TagVagt-list_Name7" value="Full Name">Navn</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-success btn-sm list" id='TagVagt-list7'>Tag</button>
+          </div>
+        </div>
+        <span class="d-block" id="TagVagt-list_Dato7" value="Dato">Dato</span>
+      </div>
+    </div>
+
+    <!-- TAGVAGT LIST ENTRY 8 -->
+    <div class="media text-muted pt-3" id="TagVagt-list_entry_8">
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="TagVagt-list_Name8" value="Full Name">Navn</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-success btn-sm list" id='TagVagt-list8'>Tag</button>
+          </div>
+        </div>
+        <span class="d-block" id="TagVagt-list_Dato8" value="Dato">Dato</span>
+      </div>
+    </div>
+
+    <!-- TAGVAGT LIST ENTRY 9 -->
+    <div class="media text-muted pt-3" id="TagVagt-list_entry_9">
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="TagVagt-list_Name9" value="Full Name">Navn</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-success btn-sm list" id='TagVagt-list9'>Tag</button>
+          </div>
+        </div>
+        <span class="d-block" id="TagVagt-list_Dato9" value="Dato">Dato</span>
+      </div>
+    </div>
+
+    <!-- TAGVAGT LIST ENTRY 10 -->
+    <div class="media text-muted pt-3" id="TagVagt-list_entry_10">
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="TagVagt-list_Name10" value="Full Name">Navn</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-success btn-sm list" id='TagVagt-list10'>Tag</button>
+          </div>
+        </div>
+        <span class="d-block" id="TagVagt-list_Dato10" value="Dato">Dato</span>
+      </div>
+    </div> 
+    <div class="container" style="text-align:right;">
+     <button type="button" style="color:rgb(255,255,255);margin-top:10px;" class="btn btn-dark btn-sm ledig" id="ViewMore_LedigVagter">Vis flere</button>
+  </div>
+  </div>
+
+  <!-- Mine Kommende Vagter Liste -->
+  <div class="my-3 p-3 bg-white rounded shadow-sm">
+    <h6 class="border-bottom border-gray pb-2 mb-0">Kommende vagter</h6>
+
+    <!-- Afgiv Vagt List 1-->
+    <div class="media text-muted pt-3" id="AfgVagt-list_entry_1">
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="AfgVagt-list_Name1">Full Name</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-warning btn-sm" id='AfgVagt-list1'>Afgiv</button>
+          </div>
+        </div>
+        <span class="d-block" id="AfgVagt-list_Dato1" value="Dato">Dato</span>
+      </div>
+    </div>
+
+    <!-- Afgiv Vagt List 2-->
+    <div class="media text-muted pt-3" id="AfgVagt-list_entry_2">
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="AfgVagt-list_Name2">Full Name</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-warning btn-sm" id='AfgVagt-list2'>Afgiv</button>
+          </div>
+        </div>
+        <span class="d-block" id="AfgVagt-list_Dato2" value="Dato">Dato</span>
+      </div>
+    </div>
+
+    <!-- Afgiv Vagt List 3-->
+    <div class="media text-muted pt-3" id="AfgVagt-list_entry_3">
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="AfgVagt-list_Name3">Full Name</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-warning btn-sm" id='AfgVagt-list3'>Afgiv</button>
+          </div>
+        </div>
+        <span class="d-block" id="AfgVagt-list_Dato3" value="Dato">Dato</span>
+      </div>
+    </div>
+
+    <!-- Afgiv Vagt List 4-->
+    <div class="media text-muted pt-3" id="AfgVagt-list_entry_4">
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="AfgVagt-list_Name4">Full Name</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-warning btn-sm" id='AfgVagt-list4'>Afgiv</button>
+          </div>
+        </div>
+        <span class="d-block" id="AfgVagt-list_Dato4" value="Dato">Dato</span>
+      </div>
+    </div>
+
+    <!-- Afgiv Vagt List 5-->
+    <div class="media text-muted pt-3" id="AfgVagt-list_entry_5">
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="AfgVagt-list_Name5">Full Name</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-warning btn-sm" id='AfgVagt-list5'>Afgiv</button>
+          </div>
+        </div>
+        <span class="d-block" id="AfgVagt-list_Dato5" value="Dato">Dato</span>
+      </div>
+    </div>
+
+    <!-- Afgiv Vagt List 6-->
+    <div class="media text-muted pt-3" id="AfgVagt-list_entry_6">
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="AfgVagt-list_Name6">Full Name</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-warning btn-sm" id='AfgVagt-list6'>Afgiv</button>
+          </div>
+        </div>
+        <span class="d-block" id="AfgVagt-list_Dato6" value="Dato">Dato</span>
+      </div>
+    </div>
+
+    <!-- Afgiv Vagt List 7-->
+    <div class="media text-muted pt-3" id="AfgVagt-list_entry_7">
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="AfgVagt-list_Name7">Full Name</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-warning btn-sm" id='AfgVagt-list7'>Afgiv</button>
+          </div>
+        </div>
+        <span class="d-block" id="AfgVagt-list_Dato7" value="Dato">Dato</span>
+      </div>
+    </div>
+
+    <!-- Afgiv Vagt List 8-->
+    <div class="media text-muted pt-3" id="AfgVagt-list_entry_8">
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="AfgVagt-list_Name8">Full Name</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-warning btn-sm" id='AfgVagt-list8'>Afgiv</button>
+          </div>
+        </div>
+        <span class="d-block" id="AfgVagt-list_Dato8" value="Dato">Dato</span>
+      </div>
+    </div>
+
+    <!-- Afgiv Vagt List 9-->
+    <div class="media text-muted pt-3" id="AfgVagt-list_entry_9">
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="AfgVagt-list_Name9">Full Name</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-warning btn-sm" id='AfgVagt-list9'>Afgiv</button>
+          </div>
+        </div>
+        <span class="d-block" id="AfgVagt-list_Dato9" value="Dato">Dato</span>
+      </div>
+    </div>
+
+    <!-- Afgiv Vagt List 10-->
+    <div class="media text-muted pt-3" id="AfgVagt-list_entry_10">
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark" id="AfgVagt-list_Name10">Full Name</strong>
+          <div class="action-buttons"> 
+          <!-- <button type="button" class="btn btn-success btn-sm">Tag vagt</button> -->
+          <button person='' dato='' type="button" class="btn btn-warning btn-sm" id='AfgVagt-list10'>Afgiv</button>
+          </div>
+        </div>
+        <span class="d-block" id="AfgVagt-list_Dato10" value="Dato">Dato</span>
+      </div>
+    </div>
+    <div class="container" style="text-align:right;">
+     <button type="button" style="color:rgb(255,255,255)" class="btn btn-dark btn-sm taget" id="ViewMore_KommendeVagter">Vis flere</button>
+  </div>
+  </div>
+  </div>
+
+
+<!--Add buttons to initiate auth sequence and sign out-->
+    <button id="authorize_button" style="display: none;">Authorize</button>
+    <button id="signout_button" style="display: none;">Sign Out</button>
+
+    <pre id="content" style="white-space: pre-wrap;"></pre>
+
+
+
+
+
+</main>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="assets/dist/js/bootstrap.bundle.js"></script><script src="assets/dist/js/bootstrap.bundle.js"></script>
+        <script src="offcanvas.js"></script></body>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+ <script src="https://apis.google.com/js/client.js"></script>
+ 
+<script src="https://apis.google.com/js/api.js?onload=loadClient" async defer></script>
+<!-- -->
+<script>
+  // Current YearMonth
+    var d = new Date();
+    var day = d.getDay();
+    var m = d.getMonth()+1;
+    currentYearMonth = function () {
+      d = new Date()  
+      m = d.getMonth()+1;
+      if(m<10) {
+          currentYearMonth = d.getFullYear()+"-0"+m
+          } 
+          else {
+          currentYearMonth = d.getFullYear()+"-"+m
+          } 
+
+
+    }
+    currentYearMonth
+    currentYearMonth()
+
+  document.getElementById("calendarTitel").innerText = currentYearMonth; 
+  function authenticate() {
+    return gapi.auth2.getAuthInstance()
+        .signIn({scope: "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/spreadsheets"})
+        .then(function() { console.log("Sign-in successful"); },
+              function(err) { console.error("Error signing in", err); });
+  }
+  function loadClient() {
+    gapi.client.setApiKey("AIzaSyCLNLDzqvBEs-fZxRuneN5rx87NqBFqSGo");
+    return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/sheets/v4/rest")
+        .then(function() { console.log("GAPI client loaded for API"); },
+              function(err) { console.error("Error loading GAPI client for API", err); });
+  }
+  // Make sure the client is loaded and sign-in is complete before calling this method.
+  
+  function execute(datainput) {
+    return gapi.client.sheets.spreadsheets.values.update({
+      "spreadsheetId": "1GZJ0pLFz1AReNUUySt4g83JKz6_rahPH8_J3rK9onBE",
+      "range": datoRangeLookup[datoKlik], // ændr input til at afspejle dato-index i google sheet
+      "includeValuesInResponse": true,
+      "responseValueRenderOption": "UNFORMATTED_VALUE",
+      "valueInputOption": "USER_ENTERED",
+      "resource": {
+        "values": datainput,
+        "majorDimension": "COLUMNS",
+        "range": datoRangeLookup[datoKlik]
+      }
+    })
+        .then(function(response) {
+                // Handle the results here (response.result has the parsed body).
+                console.log("Response", response);
+              },
+              function(err) { console.error("Execute error", err); });
+  }
+  gapi.load("client:auth2", function() {
+    gapi.auth2.init({client_id: "769487210248-5e2os7e5ajkuf3o1rg2mbhbbuskalo0n.apps.googleusercontent.com"});
+  });
+
+</script>
+
+
+
+
+
+
+
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){}" 
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+    <script src="https://apis.google.com/js/platform.js?onload=loadClient:29" async defer></script>
+  
+</div>
+</html>
