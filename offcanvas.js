@@ -232,7 +232,7 @@ window.onclick = function(event) {
 }
 
 
-
+/*
 // change text in dropdown with click
 var innerHtmlValue; 
 $('.dropdown-toggle afg').dropdown()
@@ -241,7 +241,7 @@ $().dropdown('update')
 
 var innerHtmlValue; 
 $('.dropdown-toggle tag').dropdown()
-$().dropdown('update')
+$().dropdown('update') */
 
 $("#Sarah-tag").click(VaelgPerson_Sarah_tag) 
 $("#Joachim-tag").click(VaelgPerson_Joachim_tag)  
